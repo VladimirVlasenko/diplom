@@ -13,6 +13,7 @@ import chooseClub from './modules/chooseClub';
 import burgerMenu from './modules/burgerMenu';
 import freeVisit from './modules/freeVisit';
 import callMeBack from './modules/callMeBack';
+import validateForms from './modules/validateForms';
 
 // вызов функций
 // выбор клуба
@@ -23,3 +24,5 @@ burgerMenu();
 freeVisit();
 // Перезвоните мне
 callMeBack();
+// Валидация форм
+validateForms();
