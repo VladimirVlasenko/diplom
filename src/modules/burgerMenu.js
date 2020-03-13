@@ -1,5 +1,18 @@
 const burgerMenu = () => {
-    let topMenu = document.querySelector('.top-menu');
+    const topMenu = document.querySelector('.top-menu');
+    const popupMenu = document.querySelector('.popup-menu');
+    const body = document.querySelector('body');
+    body.addEventListener('click', (event) => {
+        let target = event.target;
+        if (target.matches('img[src="images/menu-button.png"]')) {
+            popupMenu.style.display = 'flex';
+        } else if (target.matches('img[src="images/delete.png"]')) {
+            console.log(target);
+            popupMenu.style.display = 'none';
+        } else if (target.closest('.scroll')) {
+            popupMenu.style.display = 'none';
+        }
+    });
     window.addEventListener('scroll', () => {
         if(window.pageYOffset > 50) {
             topMenu.style.cssText = `
