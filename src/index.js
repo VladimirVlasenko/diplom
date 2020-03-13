@@ -7,9 +7,16 @@ elementClosest(window);
 import 'formdata-polyfill';
 import 'promise-polyfill';
 import 'fetch-polyfill';
-// модули
-import chooseClub from './modules/chooseClub';
+// модули импорт
 
+import chooseClub from './modules/chooseClub';
+import burgerMenu from './modules/burgerMenu';
+
+// вызов функций
+// выбор клуба
+chooseClub();
+// фиксация бургер меню
+burgerMenu();
 
 
 // Выбор клуба
