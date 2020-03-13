@@ -14,6 +14,7 @@ import burgerMenu from './modules/burgerMenu';
 import freeVisit from './modules/freeVisit';
 import callMeBack from './modules/callMeBack';
 import validateForms from './modules/validateForms';
+import sendForm from './modules/sendForm';
 
 // вызов функций
 // выбор клуба
@@ -26,3 +27,5 @@ freeVisit();
 callMeBack();
 // Валидация форм
 validateForms();
+// Отправка форм
+sendForm();
