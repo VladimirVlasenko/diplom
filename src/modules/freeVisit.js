@@ -7,7 +7,6 @@ body.addEventListener('click', (event) => {
         freeVisitForm.style.display = 'flex';
     }
     if (freeVisitForm.style.display === 'flex') {
-        console.log(target);
         if (target.closest('.close-form') || target.classList.contains('overlay')) {
             freeVisitForm.style.display = 'none';
         }

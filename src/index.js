@@ -12,6 +12,7 @@ import 'fetch-polyfill';
 import chooseClub from './modules/chooseClub';
 import burgerMenu from './modules/burgerMenu';
 import freeVisit from './modules/freeVisit';
+import callMeBack from './modules/callMeBack';
 
 // вызов функций
 // выбор клуба
@@ -20,7 +21,5 @@ chooseClub();
 burgerMenu();
 // Записаться на бесплатное посещение
 freeVisit();
-
-
-// Выбор клуба
-chooseClub();
+// Перезвоните мне
+callMeBack();
