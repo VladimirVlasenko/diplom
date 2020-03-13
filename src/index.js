@@ -11,12 +11,15 @@ import 'fetch-polyfill';
 
 import chooseClub from './modules/chooseClub';
 import burgerMenu from './modules/burgerMenu';
+import freeVisit from './modules/freeVisit';
 
 // вызов функций
 // выбор клуба
 chooseClub();
 // фиксация бургер меню
 burgerMenu();
+// Записаться на бесплатное посещение
+freeVisit();
 
 
 // Выбор клуба

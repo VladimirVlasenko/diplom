@@ -7,7 +7,6 @@ const burgerMenu = () => {
         if (target.matches('img[src="images/menu-button.png"]')) {
             popupMenu.style.display = 'flex';
         } else if (target.matches('img[src="images/delete.png"]')) {
-            console.log(target);
             popupMenu.style.display = 'none';
         } else if (target.closest('.scroll')) {
             popupMenu.style.display = 'none';
@@ -27,6 +26,7 @@ const burgerMenu = () => {
             position: relative;
             opacity: 100%;
             display: block;
+            z-index: 2;
 
         `;
         }
