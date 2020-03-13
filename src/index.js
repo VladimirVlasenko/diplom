@@ -11,7 +11,6 @@ import 'fetch-polyfill';
 
 import chooseClub from './modules/chooseClub';
 import burgerMenu from './modules/burgerMenu';
-import freeVisit from './modules/freeVisit';
 import callMeBack from './modules/callMeBack';
 import validateForms from './modules/validateForms';
 import sendForm from './modules/sendForm';
@@ -22,7 +21,7 @@ chooseClub();
 // фиксация бургер меню
 burgerMenu();
 // Записаться на бесплатное посещение
-freeVisit();
+// freeVisit(); совмещен с callMeBack
 // Перезвоните мне
 callMeBack();
 // Валидация форм

@@ -9,11 +9,19 @@ const sendForm = () => {
         });
     };
 
-    const loadMessage = 'Загрузка...';
+
     let bodyTag = document.querySelector('body');
     let allInputs = document.querySelectorAll('input');
+    const freeVisitForm = document.querySelector('#free_visit_form');
+    const callbackForm = document.querySelector('#callback_form');
     const statusMessage = document.createElement('div');
-    statusMessage.style.cssText = 'font-size: 2rem';
+    statusMessage.style.cssText = `
+    font-size: 2rem;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    `;
+    const loadMessage = 'Загрузка...';
     const formContent = document.querySelector('.form-content');
     let popup = document.querySelectorAll('.popup');
     
@@ -24,44 +32,24 @@ const sendForm = () => {
             statusMessage.textContent = 'Данные успешно отправлены!';
 
             allInputs.forEach((item) => {
-                item.value = '';
+                if (item.type !== 'radio' &&  item.type !== 'hidden') {
+                    item.value = '';
+                }
+                
             });
             setTimeout(() => {
-                statusMessage.textContent = '';
-                if (target.closest('#free_visit_form')) {
-                    target.innerHTML = `
-                <h4>Записаться на визит</h4>
-                <input type="hidden" name="form_name" value=" Записаться на визит">
-                <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
-                <p class="input-text"><input type="tel" name="phone" id="callback_form2-phone" required
-                                             placeholder="Ваш номер телефона..."></p>
-                <p class="personal-data">
-                    <input type="checkbox" required id="check2"><label for="check2">Я согласен на обработку <br>
-                    персональных
-                    данных</label>
+                    if (target.closest('.popup')) {
+                        let elements = target.children;
+                        for (let i = 0; i < elements.length; i++) {
+                            elements[i].style.display = 'flex';
+                        }
+                    }
+                    statusMessage.textContent = '';
+                    freeVisitForm.style.display = 'none';
+                    callbackForm.style.display = 'none';
 
-                </p>
-                <button name="send1" class="btn btn-send" type="submit">записаться</button>
-                `;
-                }
-                if (target.closest('#callback_form')) {
-                    target.innerHTML = `
-                    <h4>Обратный звонок</h4>
-                    <input type="hidden" name="form_name" value=" Обратный звонок">
-                    <!--  <input type="hidden" name="club" value="<?=$_GET['club-name']?>"> -->
-                    <p class="input-text"><input name="name" type="text" required placeholder="Ваше имя..."></p>
-                    <p class="input-text"><input type="tel" name="phone" id="callback_form1-phone" required
-                                                 placeholder="Ваш номер телефона..."></p>
-                    <p class="personal-data">
-                        <input type="checkbox" required id="check"><label for="check">Я согласен на обработку <br>
-                        персональных
-                        данных</label>
-    
-                    </p>
-                    <button name="send1" class="btn btn-send" type="submit">Перезвоните мне</button>
-                    `;
-                }
-            }, 3000);
+                 
+            }, 2000);
                 
         };
 
@@ -78,9 +66,13 @@ const sendForm = () => {
         if (target.matches('form')) {
             statusMessage.textContent = loadMessage;
             statusMessage.style.color = 'white';
-            while (target.firstChild) {
-                target.firstChild.remove();
+            if (target.closest('.popup')) {
+                let elements = target.children;
+                for (let i = 0; i < elements.length; i++) {
+                    elements[i].style.display = 'none';
+                }
             }
+
             target.appendChild(statusMessage);
         }
 
