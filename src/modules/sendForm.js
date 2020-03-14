@@ -56,6 +56,7 @@ const sendForm = () => {
             allInputs.forEach((item) => {
                 if (item.type !== 'radio' &&  item.type !== 'hidden') {
                     item.value = '';
+                    item.checked = false;
                 }
                 
             });
@@ -63,7 +64,7 @@ const sendForm = () => {
                     if (target.closest('.popup')) {
                         let elements = target.children;
                         for (let i = 0; i < elements.length; i++) {
-                            elements[i].style.display = 'flex';
+                            elements[i].style.display = 'block';
                         }
                     }
                     statusMessage.textContent = '';
@@ -71,7 +72,7 @@ const sendForm = () => {
                     callbackForm.style.display = 'none';
 
                  
-            }, 2000);
+            }, 0);
             thanks.style.display = 'flex';
             setTimeout(() => {
                 thanks.style.display = 'none';
