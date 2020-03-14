@@ -24,10 +24,32 @@ const sendForm = () => {
     const loadMessage = 'Загрузка...';
     const formContent = document.querySelector('.form-content');
     let popup = document.querySelectorAll('.popup');
+    let thanks = document.querySelector('#thanks');
     
     bodyTag.addEventListener('submit', (event) => {
         event.preventDefault();
         let target = event.target;
+        // const checkbox = target.parentNode.querySelector('#check');
+        // const checkbox2 = target.parentNode.querySelector('#check2');
+        // const cardCheck = target.parentNode.querySelector('#card-check');
+        // const checkbox1 = target.parentNode.querySelector('#check1');
+        // let checkboxMessage = document.createElement('p');
+        // checkboxMessage.textContent = 'Поставьте галочку, чтобы данные отправились!';
+
+        // if (checkbox) {
+        //     if(checkbox.checked) {target.appendChild(checkboxMessage);} else{target.removeChild(checkboxMessage);}
+        // }
+        // if (checkbox1) {
+        //     if(checkbox1.checked) {target.appendChild(checkboxMessage);} else{target.removeChild(checkboxMessage);}
+        // }
+        // if (checkbox2) {
+        //     if(checkbox2.checked) {target.appendChild(checkboxMessage);} else{target.removeChild(checkboxMessage);}
+        // }
+        // if (cardCheck) {
+        //     if(cardCheck.checked) {target.appendChild(checkboxMessage);} else{target.removeChild(checkboxMessage);}
+        // }
+
+
         let successMessage = () => {
             statusMessage.textContent = 'Данные успешно отправлены!';
 
@@ -50,6 +72,10 @@ const sendForm = () => {
 
                  
             }, 2000);
+            thanks.style.display = 'flex';
+            setTimeout(() => {
+                thanks.style.display = 'none';
+            }, 5000);
                 
         };
 

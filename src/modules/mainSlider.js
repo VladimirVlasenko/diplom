@@ -46,12 +46,10 @@ const mainSlider = () => {
         nextSlide(slide, currentSlide);
     });
     slider.addEventListener('mouseenter', (event) => {
-        let target = event.target;
         stopSlide();
 
     });
     slider.addEventListener('mouseleave', (event) => {
-        let target = event.target;
         startSlide();
     });
     startSlide(2000);

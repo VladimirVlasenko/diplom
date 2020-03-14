@@ -15,6 +15,7 @@ import callPopup from './modules/callPopup';
 import validateForms from './modules/validateForms';
 import sendForm from './modules/sendForm';
 import mainSlider from './modules/mainSlider';
+import carusel from './modules/carusel';
 
 // вызов функций
 // выбор клуба
@@ -31,3 +32,5 @@ validateForms();
 sendForm();
 // Главный слайдер
 mainSlider();
+// Карусель
+carusel();

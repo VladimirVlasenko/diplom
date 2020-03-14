@@ -4,8 +4,8 @@ const callPopup = () => {
     const freeVisitForm = document.querySelector('#free_visit_form');
     const popupGift = document.querySelector('#gift');
     const fixedGift = document.querySelector('.fixed-gift');
+    const thanks = document.querySelector('#thanks');
     const time = document.querySelector('.time');
-    const months = time.querySelectorAll('input');
     body.addEventListener('click', (event) => {
         let target = event.target;
         if(target.closest('.call') && target.closest('.head')) {
@@ -32,6 +32,11 @@ const callPopup = () => {
                 popupGift.style.display = 'none';
                 fixedGift.style.display = 'none';
             }
+        }
+        if (thanks.style.display === 'flex') {
+            if(target.closest('.close-form') || target.matches('.close-btn') || target.classList.contains('overlay')) {
+                thanks.style.display = 'none';
+            } 
         }
     });
 };
