@@ -11,9 +11,10 @@ import 'fetch-polyfill';
 
 import chooseClub from './modules/chooseClub';
 import burgerMenu from './modules/burgerMenu';
-import callMeBack from './modules/callMeBack';
+import callPopup from './modules/callPopup';
 import validateForms from './modules/validateForms';
 import sendForm from './modules/sendForm';
+import mainSlider from './modules/mainSlider';
 
 // вызов функций
 // выбор клуба
@@ -23,8 +24,10 @@ burgerMenu();
 // Записаться на бесплатное посещение
 // freeVisit(); совмещен с callMeBack
 // Перезвоните мне
-callMeBack();
+callPopup();
 // Валидация форм
 validateForms();
 // Отправка форм
 sendForm();
+// Главный слайдер
+mainSlider();

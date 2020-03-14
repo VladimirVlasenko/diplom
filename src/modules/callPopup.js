@@ -1,7 +1,9 @@
-const callMeBack = () => {
+const callPopup = () => {
     const body = document.querySelector('body');
     const callbackForm = document.querySelector('#callback_form');
-    let freeVisitForm = document.querySelector('#free_visit_form');
+    const freeVisitForm = document.querySelector('#free_visit_form');
+    const popupGift = document.querySelector('#gift');
+    const fixedGift = document.querySelector('.fixed-gift');
     const time = document.querySelector('.time');
     const months = time.querySelectorAll('input');
     body.addEventListener('click', (event) => {
@@ -22,6 +24,15 @@ const callMeBack = () => {
                 freeVisitForm.style.display = 'none';
             }
         }
+        if (target.closest('.fixed-gift')) {
+            popupGift.style.display = 'flex';
+        }
+        if (popupGift.style.display === 'flex') {
+            if (target.closest('.close-form') || target.classList.contains('overlay') || target.matches('.close-btn')) {
+                popupGift.style.display = 'none';
+                fixedGift.style.display = 'none';
+            }
+        }
     });
 };
-export default callMeBack;
+export default callPopup;
