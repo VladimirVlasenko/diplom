@@ -1382,8 +1382,6 @@ nav.popup-menu .close-menu-btn img {
 .slider-dots {
     position: absolute;
     bottom: 50px;
-    left: 50%;
-    margin-left: -65px;
     z-index: 1000
 }
 
@@ -1392,13 +1390,13 @@ nav.popup-menu .close-menu-btn img {
 }
 
 .slider-dots li button {
-    width: 22px;
-    height: 4px;
+    width: 30px;
+    height: 10px;
     background-color: #fff;
     border: none;
     border-radius: 2px;
     color: transparent;
-    margin-right: 5px
+    margin: 0 auto
 }
 
 .slider-dots li.slick-active button {
@@ -1609,12 +1607,40 @@ nav.popup-menu .close-menu-btn img {
     padding-right: 75px;
     max-width: 900px;
     margin: 0 auto;
-    text-align: center
+    text-align: center;
+    position: relative
 }
 
 #gallery .gallery-slider .slide {
     margin: 0 auto !important;
-    width: 100%
+    width: 100%;
+    display: none
+}
+#gallery .gallery-slider .gallery-item-active {
+    display: block;
+}
+
+#gallery .gallery-slider .dot-active {
+    background-color: #f4c71b;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+#gallery li {
+    display: flex;
+    text-align: center;
+    width: 40px;
+    height: 10px
+}
+#gallery .dot {
+color: white;
+background-color: white;
+margin-left: 5px;
+}
+
+#gallery .gallery-slider .dot:hover {
+    background-color: #f4c71b;
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2)
 }
 
 #gallery .gallery-slider .slider-arrow {
@@ -1628,11 +1654,12 @@ nav.popup-menu .close-menu-btn img {
 #gallery .gallery-slider .slider-arrow span {
     display: block;
     width: 36px;
-    height: 37px;
     background-color: #f4c71b;
     border-radius: 50%;
     text-align: center;
-    padding-top: 11px
+    padding-top: -0px;
+    font-size: 30px;
+    color: white
 }
 
 #gallery .gallery-slider .slider-arrow.prev {
@@ -1644,9 +1671,8 @@ nav.popup-menu .close-menu-btn img {
 }
 
 #gallery .gallery-slider .slider-dots {
-    left: 50%;
-    margin-left: -65px;
-    bottom: 5%
+    left: 40%;
+    bottom: 5%;
 }
 
 #cards {

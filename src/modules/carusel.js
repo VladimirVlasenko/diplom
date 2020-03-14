@@ -152,13 +152,14 @@ const carusel = () => {
                 display: flex;
                 transition: transform 0.5s;
                 will-change: transform;
+                max-width: 1200px; 
             }
             .glo-slider__item {
-                display: block; !important
-                align-items: center; !important
+                display: block;
+                align-items: center;
                 justify-content: center;
                 flex: 0 0 ${this.options.widthSlide}%;
-                margin: auto 0 !important;
+                margin: auto 0;
             }
             `;
             document.head.appendChild(style);

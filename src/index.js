@@ -16,6 +16,7 @@ import validateForms from './modules/validateForms';
 import sendForm from './modules/sendForm';
 import mainSlider from './modules/mainSlider';
 import carusel from './modules/carusel';
+import gallery from './modules/gallery';
 
 // вызов функций
 // выбор клуба
@@ -34,3 +35,5 @@ sendForm();
 mainSlider();
 // Карусель
 carusel();
+// Галерея 
+gallery();
