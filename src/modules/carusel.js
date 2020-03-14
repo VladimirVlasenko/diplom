@@ -4,7 +4,7 @@ const carusel = () => {
     let services = document.querySelector('#services');
     let mainWrapper = services.querySelector('.wrapper');
     mainWrapper.style.position = 'relative';
-    console.log(mainWrapper);
+
     mainWrapper.appendChild(arrow);
     let left = document.createElement('button');
     left.classList.add('prev');
@@ -60,8 +60,7 @@ const carusel = () => {
     mainWrapper.appendChild(right);
 
 
-    console.log(left);
-    console.log(right);
+
     const options = {
         main: '.wrapper',
         wrap: '.services-slider',
