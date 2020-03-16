@@ -9,7 +9,6 @@ const chooseClub = () => {
                 chooseClubMenu.style.display = 'block';
                 chooseClubMenu.style.position = 'absolute';
                 chooseClubMenu.style.top = '50px';
-                console.log(target);
             } else {
                 chooseClubMenu.style.display = 'none';
             }

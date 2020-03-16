@@ -693,6 +693,9 @@ html#schelkovo .advantages .wrapper {
         margin-left: 8px;
         margin-right: 8px
     }
+    .fixed-gift {
+        margin-top: 200px;
+    }
 }
 
 @media only screen and (max-width:991px) {
@@ -700,6 +703,9 @@ html#schelkovo .advantages .wrapper {
     html#mozaika .head-slider,
     html#schelkovo .head-slider {
         height: 340px
+    }
+    .fixed-gift {
+        margin-top: 0px;
     }
 }
 
@@ -723,6 +729,9 @@ html#schelkovo .advantages .wrapper {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center
+    }
+    .fixed-gift {
+        margin-top: 300px;
     }
 
     html#mozaika .about-club .left,
@@ -782,6 +791,7 @@ html#schelkovo .advantages .wrapper {
         font-size: 32px;
         line-height: 36px
     }
+
 
     html#mozaika .about-club .right .list img,
     html#schelkovo .about-club .right .list img {
@@ -2279,6 +2289,7 @@ p.personal-data input[type=checkbox]:checked+label:before {
     margin-top: 30px
 }
 
+
 @media only screen and (max-width:1199px) {
     .services-slider .slider-arrow.prev {
         left: 25px
@@ -2675,6 +2686,9 @@ p.personal-data input[type=checkbox]:checked+label:before {
         -o-flex-wrap: wrap;
         flex-wrap: wrap;
         min-width: 200px
+    }
+    .fixed-gift {
+        margin-top: 0px;
     }
 
     header .head .head-main .left .logo {
