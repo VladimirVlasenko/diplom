@@ -17,6 +17,7 @@ import sendForm from './modules/sendForm';
 import mainSlider from './modules/mainSlider';
 import carusel from './modules/carusel';
 import gallery from './modules/gallery';
+import calculator from './modules/calculator';
 
 // вызов функций
 // выбор клуба
@@ -37,3 +38,5 @@ mainSlider();
 carusel();
 // Галерея 
 gallery();
+// Калькулятор
+calculator();
