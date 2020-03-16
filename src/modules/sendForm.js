@@ -86,8 +86,10 @@ const sendForm = () => {
             align-items: center;
             color: white;
             `;
-
-            target.appendChild(statusMessage);
+            if (!target.matches('#card_order')) {
+                target.appendChild(statusMessage);
+            }
+            
         }
 
         postData(body)
