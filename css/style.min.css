@@ -2311,6 +2311,9 @@ p.personal-data input[type=checkbox]:checked+label:before {
         width: 49vw
     }
 }
+#gallery li {
+    width: 30px;
+}
 
 @media only screen and (max-width:991px) {
     .hidden-991 {
@@ -2419,7 +2422,11 @@ p.personal-data input[type=checkbox]:checked+label:before {
         -o-flex-wrap: wrap;
         flex-wrap: wrap
     }
+    #gallery li {
+        width: 20px;
+    }
 }
+
 
 @media only screen and (max-width:767px) {
 
@@ -2578,6 +2585,9 @@ p.personal-data input[type=checkbox]:checked+label:before {
         text-align: center
     }
 
+    #gallery li {
+        width: 10px;
+    }
     .main-slider .slide .slide-text .offer-head .top,
     .main-slider .slide.type2 .slide-text .offer-head .top {
         font-size: 27px;
@@ -2686,6 +2696,9 @@ p.personal-data input[type=checkbox]:checked+label:before {
         -o-flex-wrap: wrap;
         flex-wrap: wrap;
         min-width: 200px
+    }
+    #gallery li {
+        width: 5px;
     }
     .fixed-gift {
         margin-top: 0px;
