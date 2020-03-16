@@ -1,15 +1,19 @@
 const chooseClub = () => {
     const body = document.querySelector('body');
     const chooseClubMenu = document.querySelector('.choose-club-first');
+
     body.addEventListener('click', (event) => {
         let target = event.target;
         if (target.closest('.club-select')) {
-
-            chooseClubMenu.style.display = 'block';
-            chooseClubMenu.style.position = 'absolute';
-            chooseClubMenu.style.top = '50px';
-
-        } else if (!target.closest('.choose-club-first')) {
+            if(chooseClubMenu.style.display !== 'block') {
+                chooseClubMenu.style.display = 'block';
+                chooseClubMenu.style.position = 'absolute';
+                chooseClubMenu.style.top = '50px';
+                console.log(target);
+            } else {
+                chooseClubMenu.style.display = 'none';
+            }
+        } else {
             chooseClubMenu.style.display = 'none';
         }
     });

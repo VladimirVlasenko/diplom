@@ -17,10 +17,10 @@ const sendForm = () => {
     const statusMessage = document.createElement('div');
     statusMessage.style.cssText = `
     font-size: 2rem;
-    display: block;
-    text-align: center;
-    align-items: center;
+    position: absolute;
+    top: 50%;
     `;
+    
 
     const formContent = document.querySelector('.form-content');
     let popup = document.querySelectorAll('.popup');
@@ -29,7 +29,7 @@ const sendForm = () => {
     bodyTag.addEventListener('submit', (event) => {
         event.preventDefault();
         let target = event.target;
-
+        target.style.position = 'relative';
 
         let successMessage = () => {
 
@@ -81,12 +81,16 @@ const sendForm = () => {
             statusMessage.textContent = 'Загрузка...';
             statusMessage.style.cssText = `
             font-size: 2rem;
-            display: block;
-            margin: 0 auto;
-            align-items: center;
+            position: relative;
+            vertical-align: middle;
+            text-align: center;
+            margin: auto;
             color: white;
+
+
             `;
             if (!target.matches('#card_order')) {
+                target.style.position = 'relative';
                 target.appendChild(statusMessage);
             }
             
