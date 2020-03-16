@@ -2,6 +2,7 @@ const burgerMenu = () => {
     const topMenu = document.querySelector('.top-menu');
     const popupMenu = document.querySelector('.popup-menu');
     const body = document.querySelector('body');
+    const toTop = document.querySelector('#totop'); 
     body.addEventListener('click', (event) => {
         let target = event.target;
         if (target.matches('img[src="images/menu-button.png"]')) {
@@ -28,6 +29,16 @@ const burgerMenu = () => {
             display: block;
             z-index: 2;
 
+        `;
+        }
+        if(window.pageYOffset > 600) {
+            toTop.style.cssText = `
+                display: block;
+            `;
+        }
+        if(window.pageYOffset < 600) {
+            toTop.style.cssText = `
+            display: none;
         `;
         }
       });
