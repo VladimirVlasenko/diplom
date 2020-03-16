@@ -17,7 +17,7 @@ const validateForms = () => {
                   });
             }
         }
-         else if (target.matches('input[name="name"]')) {
+         else if (target.matches('input[name="name"]') && !target.matches('.promo-code')) {
             target.value = target.value.replace(/[^а-яА-Я ]/, '');
             let length = target.value.length;
             if (length > 30) {
