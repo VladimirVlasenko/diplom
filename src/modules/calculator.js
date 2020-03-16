@@ -10,7 +10,6 @@ const calculator = () => {
     let price = document.querySelector('#price-total');
     const defaultPrice = 1999;
     price.textContent = defaultPrice;
-    console.log(clubs[1].checked);
 
     body.addEventListener('input', (event) => {
         let target = event.target;
