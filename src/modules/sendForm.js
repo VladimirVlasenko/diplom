@@ -17,11 +17,11 @@ const sendForm = () => {
     const statusMessage = document.createElement('div');
     statusMessage.style.cssText = `
     font-size: 2rem;
-    display: flex;
-    margin: 0 auto;
+    display: block;
+    text-align: center;
     align-items: center;
     `;
-    const loadMessage = 'Загрузка...';
+
     const formContent = document.querySelector('.form-content');
     let popup = document.querySelectorAll('.popup');
     let thanks = document.querySelector('#thanks');
@@ -29,29 +29,9 @@ const sendForm = () => {
     bodyTag.addEventListener('submit', (event) => {
         event.preventDefault();
         let target = event.target;
-        // const checkbox = target.parentNode.querySelector('#check');
-        // const checkbox2 = target.parentNode.querySelector('#check2');
-        // const cardCheck = target.parentNode.querySelector('#card-check');
-        // const checkbox1 = target.parentNode.querySelector('#check1');
-        // let checkboxMessage = document.createElement('p');
-        // checkboxMessage.textContent = 'Поставьте галочку, чтобы данные отправились!';
-
-        // if (checkbox) {
-        //     if(checkbox.checked) {target.appendChild(checkboxMessage);} else{target.removeChild(checkboxMessage);}
-        // }
-        // if (checkbox1) {
-        //     if(checkbox1.checked) {target.appendChild(checkboxMessage);} else{target.removeChild(checkboxMessage);}
-        // }
-        // if (checkbox2) {
-        //     if(checkbox2.checked) {target.appendChild(checkboxMessage);} else{target.removeChild(checkboxMessage);}
-        // }
-        // if (cardCheck) {
-        //     if(cardCheck.checked) {target.appendChild(checkboxMessage);} else{target.removeChild(checkboxMessage);}
-        // }
 
 
         let successMessage = () => {
-            statusMessage.textContent = 'Данные успешно отправлены!';
 
             allInputs.forEach((item) => {
                 if (item.type !== 'radio' &&  item.type !== 'hidden') {
@@ -76,7 +56,7 @@ const sendForm = () => {
             thanks.style.display = 'flex';
             setTimeout(() => {
                 thanks.style.display = 'none';
-            }, 5000);
+            }, 3000);
                 
         };
 
@@ -91,14 +71,21 @@ const sendForm = () => {
         };
 
         if (target.matches('form')) {
-            statusMessage.textContent = loadMessage;
-            statusMessage.style.color = 'white';
+
             if (target.closest('.popup')) {
                 let elements = target.children;
                 for (let i = 0; i < elements.length; i++) {
                     elements[i].style.display = 'none';
                 }
             }
+            statusMessage.textContent = 'Загрузка...';
+            statusMessage.style.cssText = `
+            font-size: 2rem;
+            display: block;
+            margin: 0 auto;
+            align-items: center;
+            color: white;
+            `;
 
             target.appendChild(statusMessage);
         }
