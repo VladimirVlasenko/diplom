@@ -1634,7 +1634,7 @@ nav.popup-menu .close-menu-btn img {
 #gallery .dot {
 color: white;
 background-color: white;
-margin-left: 5px;
+margin-left: 10px;
 }
 
 #gallery .gallery-slider .dot:hover {
@@ -1671,7 +1671,7 @@ margin-left: 5px;
 }
 
 #gallery .gallery-slider .slider-dots {
-    left: 40%;
+    left: 38%;
     bottom: 5%;
 }
 

@@ -2,8 +2,12 @@ const carusel = () => {
     let arrow = document.createElement('div');
     arrow.classList.add('slider-arrow');
     let services = document.querySelector('#services');
+    services.style.position = 'relative';
     let mainWrapper = services.querySelector('.wrapper');
-    mainWrapper.style.position = 'relative';
+    mainWrapper.style.cssText = `
+    overflow: hidden !important;
+    position: relative;
+    `;
 
     mainWrapper.appendChild(arrow);
     let left = document.createElement('button');
@@ -12,23 +16,25 @@ const carusel = () => {
     left.appendChild(arL);
     arL.style.cssText = `
     position: absolute;
-    top: -33%;
+    top: -35%;
     left: 0%;
     color: white;
     `;
     arL.textContent = "⇐";
     left.style.cssText = `
     display: flex;
-    font-size: 35px;
-    width: 36px;
-    height: 37px;
+    opacity: 0.8;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
     background-color: #f4c71b;
     border-radius: 50%;
     text-align: center;
     padding-top: 11px;
     position: absolute;
-    left: 2px;
-    top: 37%;
+    left: 0px;
+    top: 50%;
+    
     `;
     mainWrapper.appendChild(left);
     let right = document.createElement('button');
@@ -38,24 +44,25 @@ const carusel = () => {
     arR.textContent = '⇒';
     arR.style.cssText = `
     position: absolute;
-    top: -33%;
+    top: -35%;
     right: 0%;
     color: white;
     `;
     right.style.cssText = `
     display: flex;
+    opacity: 0.8;
     align-items: center;
     vertical-align: center;
-    font-size: 35px;
-    width: 36px;
-    height: 37px;
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
     background-color: #f4c71b;
     border-radius: 50%;
     text-align: center;
     padding-top: 11px;
     position: absolute;
     right: 2px;
-    top: 37%;
+    top: 50%;
     `;
     mainWrapper.appendChild(right);
 
@@ -146,20 +153,23 @@ const carusel = () => {
             
             style.textContent = `
             .glo-slider {
-                overflow: hidden;
+    
             }
             .glo-slider__wrap {
-                display: flex;
-                transition: transform 0.5s;
-                will-change: transform;
-                max-width: 1200px; 
+                display: flex !important;
+
+                transition: transform 0.5s !important; 
+                will-change: transform !important;
+                max-width: 1100px !important; 
+                position: relative;
+                
             }
             .glo-slider__item {
-                display: block;
-                align-items: center;
-                justify-content: center;
-                flex: 0 0 ${this.options.widthSlide}%;
-                margin: auto 0;
+                display: block !important;
+                align-items: center !important;
+                justify-content: center !important;
+                flex: 0 0 ${this.options.widthSlide}% !important;
+                margin: 0 auto !important;
             }
             `;
             document.head.appendChild(style);
@@ -233,13 +243,13 @@ const carusel = () => {
                     for(let i = 0; i < allResponse.length; i++) {
                         if(widthWindow < allResponse[i]) {
                             this.slidesToShow = this.responsive[i].slidesToShow;
-                            this.options.widthSlide = Math.floor(100 / this.slidesToShow);
+                            this.options.widthSlide = Math.floor(100 / this.slidesToShow + 1);
                             this.addStyle();
                         } 
                     }
                 } else {
                     this.slidesToShow = slidesToShowDefault;
-                    this.options.widthSlide = Math.floor(100 / this.slidesToShow);
+                    this.options.widthSlide = Math.floor(100 / this.slidesToShow +1);
                     this.addStyle();
                 }
             };
